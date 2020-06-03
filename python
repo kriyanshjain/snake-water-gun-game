@@ -1,0 +1,80 @@
+import random
+a = [ "snake" , "water" , "gun" ]
+n = 0
+cp = 0
+hp = 0
+while (n<=5):
+    comp = random.choice(a)
+    pers = int(input("press 1 for snake, 2 for water and 3 for gun:"))
+
+    if pers == 1 and comp == "water":
+        print("you choose: snake")
+        print("computer choose:",comp)
+        print("you win")
+        print("chances left:",5 - n)
+        hp = hp + 1
+
+    elif pers == 1 and comp == "gun":
+        print("you choose: snake")
+        print("computer choose:", comp)
+        print("you loose")
+        print("chances left:", 5 - n)
+        cp = cp + 1
+
+    elif pers == 1 and comp == "snake":
+        print("you choose: snake")
+        print("computer choose:", comp)
+        print("draw")
+        print("chances left:", 5 - n)
+
+    if pers == 2 and comp == "snake":
+        print("you choose: water")
+        print("computer choose:",comp)
+        print("you loose")
+        print("chances left:",5 - n)
+        cp = cp + 1
+
+    elif pers == 2 and comp == "gun":
+        print("you choose: water")
+        print("computer choose:", comp)
+        print("you win")
+        print("chances left:", 5 - n)
+        hp = hp + 1
+
+    elif pers == 2 and comp == "water":
+        print("you choose: water")
+        print("computer choose:", comp)
+        print("draw")
+        print("chances left:", 5 - n)
+
+
+    if pers == 3 and comp == "snake":
+        print("you choose: gun")
+        print("computer choose:",comp)
+        print("you win")
+        print("chances left:",5 - n)
+        hp = hp  + 1
+
+    elif pers == 3 and comp == "water":
+        print("you choose: gun")
+        print("computer choose:", comp)
+        print("you loose")
+        print("chances left:", 5 - n)
+        cp = cp + 1
+
+    elif pers == 3 and comp == "gun":
+        print("you choose: gun")
+        print("computer choose:", comp)
+        print("draw")
+        print("chances left:", 5 - n)
+
+    n = n + 1
+
+print("snake , water , gun game")
+if cp > hp :
+    print("your score:",hp,"and computer score:",cp,"\n\t\t\t\tyou loose")
+elif hp > cp :
+    print("your score:", hp, "and computer score:", cp, "\n\t\t\t\tyou win")
+elif cp == hp :
+    print("your score:", hp, "and computer score:", cp, "\n\t\t\t\tie")
+
